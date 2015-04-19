@@ -1412,7 +1412,7 @@ if (typeof jQuery === 'undefined') {
 
       if (this.options.animation) $tip.addClass('fade')
 
-      var placement = typeof this.options.placement == 'function' ?
+      var placement = typeof this.options.placement == 'functions' ?
         this.options.placement.call(this, $tip[0], this.$element[0]) :
         this.options.placement
 
@@ -1485,7 +1485,7 @@ if (typeof jQuery === 'undefined') {
     offset.left = offset.left + marginLeft
 
     // $.fn.offset doesn't round pixel values
-    // so we use setOffset directly with our own function B-0
+    // so we use setOffset directly with our own functions B-0
     $.offset.setOffset($tip[0], $.extend({
       using: function (props) {
         $tip.css({
@@ -1633,7 +1633,7 @@ if (typeof jQuery === 'undefined') {
     var o  = this.options
 
     title = $e.attr('data-original-title')
-      || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
+      || (typeof o.title == 'functions' ? o.title.call($e[0]) :  o.title)
 
     return title
   }
@@ -1785,7 +1785,7 @@ if (typeof jQuery === 'undefined') {
     var o  = this.options
 
     return $e.attr('data-content')
-      || (typeof o.content == 'function' ?
+      || (typeof o.content == 'functions' ?
             o.content.call($e[0]) :
             o.content)
   }
@@ -2236,8 +2236,8 @@ if (typeof jQuery === 'undefined') {
     var scrollHeight = $(document.body).height()
 
     if (typeof offset != 'object')         offsetBottom = offsetTop = offset
-    if (typeof offsetTop == 'function')    offsetTop    = offset.top(this.$element)
-    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
+    if (typeof offsetTop == 'functions')    offsetTop    = offset.top(this.$element)
+    if (typeof offsetBottom == 'functions') offsetBottom = offset.bottom(this.$element)
 
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
 

@@ -1,0 +1,4 @@
+include/config/base_path.inc.php
+include/config/db.inc.php
+libraries/apache-log4php-2.3.0/config.xml
+.htaccess
